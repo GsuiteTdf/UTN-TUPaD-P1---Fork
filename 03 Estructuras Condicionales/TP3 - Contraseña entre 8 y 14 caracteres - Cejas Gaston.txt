@@ -1,0 +1,33 @@
+import random
+from statistics import mode, median, mean, StatisticsError
+
+# Crear la lista de 50 números aleatorios entre 1 y 100
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+
+# Calcular la media, la mediana y la moda
+media = mean(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+
+# Puede haber más de una moda o no existir una moda clara
+try:
+    moda = mode(numeros_aleatorios)
+except StatisticsError:
+    moda = None
+
+# Imprimir los valores calculados
+print(f"Números aleatorios: {numeros_aleatorios}")
+print(f"Media: {media}")
+print(f"Mediana: {mediana}")
+print(f"Moda: {moda if moda is not None else 'No hay una única moda'}")
+
+# Determinar el tipo de sesgo
+if moda is None:
+    print("No se puede determinar el sesgo porque no hay una única moda.")
+elif media > mediana > moda:
+    print("Sesgo positivo (a la derecha).")
+elif media < mediana < moda:
+    print("Sesgo negativo (a la izquierda).")
+elif media == mediana == moda:
+    print("Distribución sin sesgo.")
+else:
+    print("No se puede determinar un sesgo claro.")

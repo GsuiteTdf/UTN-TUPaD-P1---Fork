@@ -1,0 +1,17 @@
+def es_texto_valido(texto):
+    # Retorna True si el texto contiene solo letras y/o espacios
+    return texto.replace(" ", "").isalpha()
+
+while True:
+    entrada = input("Ingrese una frase o palabra: ").strip()
+    if es_texto_valido(entrada):
+        break
+    else:
+        print("¡Debe ingresar una frase o palabra!")
+
+# Verificar si la última letra (ignorando espacios) es una vocal
+entrada_sin_espacios = entrada.rstrip()
+if entrada_sin_espacios and entrada_sin_espacios[-1].lower() in "aeiou":
+    entrada += "!"
+
+print("Resultado:", entrada)

@@ -1,0 +1,28 @@
+# ----------------------------------------
+# ETAPA 1: Solicitud y validación de la nota
+# ----------------------------------------
+
+while True:
+    entrada = input("Por favor, ingresa tu nota (entre 1 y 10): ")
+
+    if entrada.isdigit():
+        nota = int(entrada)
+
+        if 1 <= nota <= 10:
+            break  # Salimos del bucle si la nota es válida
+        else:
+            print("La nota debe estar entre 1 y 10.")
+    else:
+        print("Debes introducir únicamente valores numéricos!")
+
+# ----------------------------------------
+# ETAPA 2: Evaluación de la condición
+# ----------------------------------------
+
+if nota >= 6:
+    # ----------------------------------------
+    # ETAPA 3: Mostrar resultado
+    # ----------------------------------------
+    print("Aprobado")
+else:
+    print("Desaprobado")

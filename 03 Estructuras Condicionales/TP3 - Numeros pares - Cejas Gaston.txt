@@ -1,0 +1,25 @@
+# ----------------------------------------
+# ETAPA 1: Solicitud y validación de la edad
+# ----------------------------------------
+
+while True:
+    entrada = input("Por favor, ingresa tu edad: ")
+
+    if entrada.isdigit():
+        edad = int(entrada)
+        break  # Salimos del bucle si es un número válido
+    else:
+        print("Debes introducir únicamente valores numéricos!")
+
+# ----------------------------------------
+# ETAPA 2: Clasificación según la edad
+# ----------------------------------------
+
+if edad < 12:
+    print("Niño/a")
+elif edad < 18:
+    print("Adolescente")
+elif edad < 30:
+    print("Adulto/a joven")
+else:
+    print("Adulto/a")

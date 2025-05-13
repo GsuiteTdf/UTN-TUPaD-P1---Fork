@@ -1,0 +1,26 @@
+# ----------------------------------------
+# ETAPA 1: Solicitud y validación de la contraseña
+# ----------------------------------------
+
+while True:
+    contraseña = input("Por favor, ingresa una contraseña (entre 8 y 14 caracteres): ")
+
+    longitud = len(contraseña)
+
+    if 8 <= longitud <= 14:
+        # ----------------------------------------
+        # ETAPA 2: Verificación de contraseña específica
+        # ----------------------------------------
+        if contraseña == "12345678":
+            print("Esa es la contraseña que un tonto pondría en su cuenta de correo!")
+        else:
+            # ----------------------------------------
+            # ETAPA 3: Contraseña aceptada
+            # ----------------------------------------
+            print("Ha ingresado una contraseña correcta")
+        break
+    else:
+        # ----------------------------------------
+        # ETAPA 4: Longitud inválida
+        # ----------------------------------------
+        print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")

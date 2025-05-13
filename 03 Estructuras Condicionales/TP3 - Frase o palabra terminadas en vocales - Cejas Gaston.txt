@@ -1,0 +1,40 @@
+def nombre_valido(nombre):
+    # Verifica que solo haya letras y espacios
+    return all(c.isalpha() or c.isspace() for c in nombre) and nombre.strip() != ""
+
+# Paso 1: Solicitar un nombre válido
+while True:
+    nombre = input("Ingrese su nombre (solo letras): ").strip()
+    if nombre_valido(nombre):
+        break
+    else:
+        print("¡El nombre solo debe contener letras! No se permiten números ni símbolos.")
+
+# Mostrar opciones disponibles
+opciones = """
+Seleccione una de las siguientes opciones ingresando el número correspondiente:
+1. Mostrar el nombre en MAYÚSCULAS. Ejemplo: PEDRO
+2. Mostrar el nombre en minúsculas. Ejemplo: pedro
+3. Mostrar el nombre con la primera letra en mayúscula. Ejemplo: Pedro
+"""
+
+print(opciones)
+
+# Paso 2: Validar la opción ingresada
+while True:
+    opcion = input("Ingrese su opción (1, 2 o 3): ").strip()
+    if opcion in ("1", "2", "3"):
+        break
+    else:
+        print("¡Debe ingresar 1, 2 o 3 según la opción que prefiera!")
+        print(opciones)
+
+# Aplicar transformación al nombre
+if opcion == "1":
+    resultado = nombre.upper()
+elif opcion == "2":
+    resultado = nombre.lower()
+else:
+    resultado = nombre.title()
+
+print("Resultado:", resultado)

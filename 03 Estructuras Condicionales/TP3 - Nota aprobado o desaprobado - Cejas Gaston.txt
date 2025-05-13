@@ -1,0 +1,26 @@
+# ----------------------------------------
+# ETAPA 1: Solicitud y validación del número
+# ----------------------------------------
+
+while True:
+    entrada = input("Por favor, ingresa un número par: ")
+
+    if entrada.isdigit():
+        numero = int(entrada)
+
+        if numero % 2 == 0:
+            # ----------------------------------------
+            # ETAPA 2: Confirmación del número par
+            # ----------------------------------------
+            print("Ha ingresado un número par")
+            break
+        else:
+            # ----------------------------------------
+            # ETAPA 3: Número impar
+            # ----------------------------------------
+            print("Por favor, ingrese un número par.")
+    else:
+        # ----------------------------------------
+        # ETAPA 4: Entrada inválida
+        # ----------------------------------------
+        print("Debes introducir únicamente valores numéricos!")

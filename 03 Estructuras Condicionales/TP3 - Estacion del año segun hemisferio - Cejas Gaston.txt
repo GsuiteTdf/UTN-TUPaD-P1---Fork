@@ -1,0 +1,50 @@
+# Función para validar si una entrada es un número entero en cierto rango
+def obtener_entero_valido(prompt, minimo, maximo):
+    while True:
+        valor = input(prompt).strip()
+        if valor.isdigit():
+            numero = int(valor)
+            if minimo <= numero <= maximo:
+                return numero
+            else:
+                print(f"¡Debe ingresar un número entre {minimo} y {maximo}!")
+        else:
+            print("¡Debe ingresar solo números!")
+
+# Validar hemisferio
+while True:
+    hemisferio = input("Ingrese el hemisferio (N para norte o S para sur): ").strip().upper()
+    if hemisferio in ("N", "S"):
+        break
+    else:
+        print("¡Solo se permite ingresar 'N' o 'S'!")
+
+# Solicitar fecha
+mes = obtener_entero_valido("Ingrese el mes (01 al 12): ", 1, 12)
+dia = obtener_entero_valido("Ingrese el día (01 al 31): ", 1, 31)
+
+# Convertimos la fecha en un valor comparable (mes, día)
+fecha = (mes, dia)
+
+# Definición de rangos de estaciones por fecha
+if (fecha >= (12, 21) or fecha <= (3, 20)):
+    estacion_norte = "Invierno"
+    estacion_sur = "Verano"
+elif (fecha >= (3, 21) and fecha <= (6, 20)):
+    estacion_norte = "Primavera"
+    estacion_sur = "Otoño"
+elif (fecha >= (6, 21) and fecha <= (9, 20)):
+    estacion_norte = "Verano"
+    estacion_sur = "Invierno"
+else:  # Desde 21 de septiembre hasta 20 de diciembre
+    estacion_norte = "Otoño"
+    estacion_sur = "Primavera"
+
+# Determinar estación según hemisferio
+if hemisferio == "N":
+    estacion = estacion_norte
+else:
+    estacion = estacion_sur
+
+# Mostrar resultado
+print(f"En la fecha {dia:02d}/{mes:02d} en el hemisferio {'norte' if hemisferio == 'N' else 'sur'}, la estación es: {estacion}")
