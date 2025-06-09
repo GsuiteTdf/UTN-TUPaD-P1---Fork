@@ -1,0 +1,11 @@
+# Entorno virtual
+venv/
+
+# Caché y archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Documentos que no quieres subir
+*.xlsx
+*.docx
+03 Estructuras Condicionales/
